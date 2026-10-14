@@ -59,8 +59,9 @@ class GreeCoordinator(DataUpdateCoordinator[None]):
         self._feature_auto_xfan: bool = False
         self._feature_auto_light: bool = False
         self._unsub_follow_up_refresh: CALLBACK_TYPE | None = None
-        # Set on the ducted unit of a zone controller: the memory of the zone
-        # target temperatures per mode, and the zones of the same controller.
+        # The memory of the target temperatures per mode. Set on the ducted
+        # unit of a zone controller, with the zones of the same controller, and
+        # on a standalone or VRF unit that remembers its own target.
         self.setpoint_memory: SetpointMemory | None = None
         self.zone_coordinators: list[GreeCoordinator] = []
 
